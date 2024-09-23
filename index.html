@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <script src="https://cdn.jsdelivr.net/npm/vega@5.20.2"></script>
+  <script src="https://cdn.jsdelivr.net/npm/vega-lite@5.1.0"></script>
+  <script src="https://cdn.jsdelivr.net/npm/vega-embed@6.17.0"></script>
+  
+  <title>Tsunami Map Visualization</title>
+  
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 20px;
+      display: flex;
+      flex-direction: column;
+      justify-items: center;
+      align-items: center;
+    }
+    h1 {
+      text-align: center;
+    }
+    #map {
+      display: flex;
+      justify-content: center;
+    }
+  </style>
+</head>
+
+<body>
+  <h1>Tsunamis Around the World from 2000 to 2020</h1>
+  <div id="map"></div>
+
+  <script type="text/javascript">
+    var spec = "map.json";  // Specify the path to your map.json file
+    vegaEmbed('#map', spec).then(function(result) {}).catch(console.error);
+  </script>
+</body>
+</html>
