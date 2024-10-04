@@ -1,0 +1,82 @@
+{
+  "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+  "title": { 
+    "text": {"expr": "'Magnitudes Over Time (Years: ' + Start + ' to ' + End + ')'"}, 
+    "fontSize": 18
+  },
+  "width": 600,
+  "height": 400,
+  "data": {"url": "Week 10 Homework/DATA/tsunami_dataset.csv"},
+  "params": [
+    {
+      "name": "Start",
+      "value": 1970,
+      "bind": {
+        "input": "range",
+        "min": 1970,
+        "max": 2020,
+        "step": 1
+      }
+    },
+    {
+      "name": "End",
+      "value": 2000,
+      "bind": {
+        "input": "range",
+        "min": 1970,
+        "max": 2020,
+        "step": 1
+      }
+    }
+  ],
+  "transform": [
+    {"filter": "datum.mag != null"},
+    {"filter": "datum.mag > 0"},
+    {"filter": "datum.month != null"},
+    {"filter": "datum.day != null"},
+    {"filter": "datum.year != null && datum.year >= 1970"},
+    {
+      "calculate": "datetime(datum.year, datum.month-1, datum.day)",
+      "as": "date"
+    },
+    {
+      "filter": "year(datum.date) >= Start && year(datum.date) <= End"
+    },
+    {"aggregate": [{
+      "op": "min",
+      "field": "mag",
+      "as": "minMag"
+    }],
+    "groupby": ["mag"]}
+  ],
+  "mark": {
+    "type": "circle",
+    "color": "#10548b"
+  },
+  "encoding": {
+    "x": {
+      "field": "date",
+      "type": "temporal",
+      "title": "Date",
+      "axis": {
+        "titleFontSize": 15,
+        "labelFontSize": 13,
+        "tickCount": 10
+      }
+    },
+    "y": {
+      "field": "mag",
+      "type": "quantitative",
+      "title": "Magnitude",
+      "axis": {
+        "titleFontSize": 15,
+        "labelFontSize": 13
+      }
+    },
+    "tooltip": [
+      {"field": "country", "type": "nominal", "title": "Country"},
+      {"field": "date", "type": "temporal", "title": "Date"},
+      {"field": "mag", "type": "quantitative", "title": "Magnitude"}
+    ]
+  }
+}

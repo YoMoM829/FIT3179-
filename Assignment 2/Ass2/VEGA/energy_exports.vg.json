@@ -1,0 +1,28 @@
+{
+    "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+    "title": { "text": "Exports of Energy Types" },
+    "data": {
+      "url": "DATA/energy_exports.csv"
+    },
+    "transform": [
+      {
+        "fold": ["Oil", "Refined Petroleum Products", "Gas", "Coal"],
+        "as": ["FuelType", "Energy"]
+      }
+    ],
+    "mark": {
+      "type": "arc"
+    },
+    "encoding": {
+      "theta": {
+        "field": "Energy",
+        "type": "quantitative",
+        "title": "Energy (PJ)"
+      },
+      "color": {
+        "field": "FuelType",
+        "type": "nominal",
+        "title": "Fuel Type"
+      }
+    }
+}

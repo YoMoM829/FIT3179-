@@ -1,0 +1,37 @@
+{
+  "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+  "title": { "text": "Energy Production by Fuel Type" },
+  "data": {
+    "url": "DATA/energy_prod_fuel_type.csv"
+  },
+  "transform": [
+    {
+      "fold": ["Coal", "Renewables", "Gas", "Oil"],
+      "as": ["FuelType", "Energy"]
+    },
+    {
+      "calculate": "datetime(datum.Time, 0, 1)", 
+      "as": "year"
+    }
+  ],
+  "mark": {
+    "type": "line"
+  },
+  "encoding": {
+    "x": {
+      "field": "year",
+      "type": "temporal",
+      "title": "Year"
+    },
+    "y": {
+      "field": "Energy",
+      "type": "quantitative",
+      "title": "Energy (PJ)"
+    },
+    "color": {
+      "field": "FuelType",
+      "type": "nominal",
+      "title": "Fuel Type"
+    }
+  }
+}

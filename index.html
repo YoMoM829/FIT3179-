@@ -1,39 +1,37 @@
 <!DOCTYPE html>
-<html>
-<head>
-  <script src="https://cdn.jsdelivr.net/npm/vega@5.20.2"></script>
-  <script src="https://cdn.jsdelivr.net/npm/vega-lite@5.1.0"></script>
-  <script src="https://cdn.jsdelivr.net/npm/vega-embed@6.17.0"></script>
-  
-  <title>Tsunami Map Visualization</title>
-  
-  <style>
-    body {
-      font-family: Arial, sans-serif;
-      margin: 0;
-      padding: 20px;
-      display: flex;
-      flex-direction: column;
-      justify-items: center;
-      align-items: center;
-    }
-    h1 {
-      text-align: center;
-    }
-    #map {
-      display: flex;
-      justify-content: center;
-    }
-  </style>
-</head>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <title>33156905 - Visualisation 2</title>
 
-<body>
-  <h1>Tsunamis Around the World from 2000 to 2020</h1>
-  <div id="map"></div>
+        <!-- CSS -->
+        <link rel="stylesheet" href="Week 10 Homework/CSS/general.css">
+        <link rel="stylesheet" href="Week 10 HomeworkCSS/tsunami_time_bar_chart.css">
+        <link rel="stylesheet" href="Week 10 HomeworkCSS/tsunami_map.css">
 
-  <script type="text/javascript">
-    var spec = "map.json";  // Specify the path to your map.json file
-    vegaEmbed('#map', spec).then(function(result) {}).catch(console.error);
-  </script>
-</body>
+        <!-- Include Vega, Vega-Lite, and Vega-Embed libraries -->
+        <script src="https://cdn.jsdelivr.net/npm/vega@5"></script>
+        <script src="https://cdn.jsdelivr.net/npm/vega-lite@5"></script>
+        <script src="https://cdn.jsdelivr.net/npm/vega-embed@6"></script>
+        <script src="Week 10 Homework/VEGA/HW.js"></script>
+    </head>
+    <body>
+        <div class="title">
+            <p class="title-text">Tsunamis around Earth</p>
+        </div>
+        
+        <div class="content">
+            <div class="container-1">
+                <div class="map-container">
+                    <div id="map"></div>
+                </div>
+            </div>
+            <div class="vis1-container">
+                <div class="vis1-special-container">
+                    <div id="vis1"></div> 
+                </div>
+                <div class="vis1-text"></div>
+            </div>
+        </div>
+    </body>
 </html>

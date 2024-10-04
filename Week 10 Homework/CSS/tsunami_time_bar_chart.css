@@ -1,0 +1,17 @@
+.vis1-container {
+    display: flex;
+    flex-direction: row;
+    gap: 20px;
+}
+
+.vis1-special-container {
+    padding: 10px;
+    border-radius: 20px;
+    background-color: white;
+}
+
+.vis1-text {
+    background-color: white;
+    border-radius: 20px;
+    padding: 50px;
+}
