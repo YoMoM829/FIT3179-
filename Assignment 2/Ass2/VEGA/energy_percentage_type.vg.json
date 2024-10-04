@@ -1,0 +1,61 @@
+{
+    "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+    "title": {
+      "text": "Energy Usage by Type across Australian States",
+      "fontSize": 18
+    },
+    "projection": {"type": "equalEarth"},
+    "layer": [
+      {
+        "data": {
+          "url": "ne_110m.json",
+          "format": {"type": "topojson", "feature": "ne_110_admin_countries"}  
+        },
+        "transform": [
+          {
+            "filter": "datum.properties.ISO_A3 === 'AUS'"  
+          }
+        ],
+        "mark": {
+          "type": "geoshape",
+          "fill": "lightgray",
+          "stroke": "white"
+        }
+      },
+      {
+        "data": {"url": "DATA/energy_percentage_map.csv"},
+        "transform": [
+          {
+            "fold": ["Coal", "Renewables", "Gas", "Oil"],
+            "as": ["energy_type", "percentage"]
+          }
+        ],
+        "mark": "circle",
+        "encoding": {
+          "longitude": {"field": "Longitude", "type": "quantitative"},
+          "latitude": {"field": "Latitude", "type": "quantitative"},
+          "color": {
+            "field": "energy_type",
+            "type": "nominal",
+            "scale": {
+              "domain": ["Coal", "Renewables", "Gas", "Oil"],
+              "range": ["#ff5733", "#28b463", "#3498db", "#f1c40f"]
+            },
+            "title": "Energy Type"
+          },
+          "size": {
+            "field": "percentage",
+            "type": "quantitative",
+            "title": "Percentage",
+            "scale": {"range": [0, 1000]}
+          },
+          "tooltip": [
+            {"field": "States", "type": "nominal", "title": "State"},
+            {"field": "energy_type", "type": "nominal", "title": "Energy Type"},
+            {"field": "percentage", "type": "quantitative", "title": "Percentage"}
+          ]
+        }
+      }
+    ]
+  }
+  
