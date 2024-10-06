@@ -17,7 +17,7 @@
       "bind": {
         "input": "range",
         "min": 1970,
-        "max": 2020,
+        "max": 2019,
         "step": 1
       }
     },
@@ -55,8 +55,7 @@
       "encoding": {
         "x": {
           "field": "date",
-          "type": "temporal",
-          "timeUnit": "year",  
+          "type": "temporal", 
           "title": "Year",
           "axis": {
             "titleFontSize": 15,
@@ -72,7 +71,8 @@
           "axis": {
             "titleFontSize": 15,
             "labelFontSize": 13
-          }
+          },
+          "scale": {"domainMin": 3}
         },
         "tooltip": [
           {"field": "country", "type": "nominal", "title": "Country"},
@@ -92,23 +92,15 @@
       "mark": {
         "type": "text",
         "align": "left",
-        "dx": 20,  
-        "dy": -5,  
-        "fontSize": 14, 
+        "dx": 20,
+        "dy": -5,
+        "fontSize": 14,
         "color": "red"
       },
-      "transform": [
-        {
-          "aggregate": [
-            {"op": "max", "field": "date", "as": "maxDate"}
-          ]
+      "encoding": {
+        "x": {
+          "value": 600  
         },
-        {
-          "filter": "datum.maxDate != null"
-        }
-      ],
-      "encoding": { 
-        "x": {"datum": "maxDate"},
         "y": {"datum": 7},  
         "text": {"value": "Extreme Magnitudes (7+)"}
       }
