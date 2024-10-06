@@ -17,7 +17,7 @@
       "bind": {
         "input": "range",
         "min": 1970,
-        "max": 2020,
+        "max": 2019,
         "step": 1
       }
     },
@@ -55,11 +55,12 @@
       "encoding": {
         "x": {
           "field": "date",
-          "type": "temporal",
-          "title": "Date",
+          "type": "temporal", 
+          "title": "Year",
           "axis": {
             "titleFontSize": 15,
             "labelFontSize": 13,
+            "labelAngle": 0,  
             "tickCount": 10
           }
         },
@@ -70,13 +71,38 @@
           "axis": {
             "titleFontSize": 15,
             "labelFontSize": 13
-          }
+          },
+          "scale": {"domainMin": 3}
         },
         "tooltip": [
           {"field": "country", "type": "nominal", "title": "Country"},
           {"field": "date", "type": "temporal", "title": "Date"},
           {"field": "mag", "type": "quantitative", "title": "Magnitude"}
         ]
+      }
+    },
+    {
+      "mark": {"type": "rule", "color": "red", "strokeDash": [5,5]},
+      "encoding": {
+        "y": {"datum": 7},
+        "tooltip": {"value": "Threshold: Magnitude 7"}
+      }
+    },
+    {
+      "mark": {
+        "type": "text",
+        "align": "left",
+        "dx": 20,
+        "dy": -5,
+        "fontSize": 14,
+        "color": "red"
+      },
+      "encoding": {
+        "x": {
+          "value": 600  
+        },
+        "y": {"datum": 7},  
+        "text": {"value": "Extreme Magnitudes (7+)"}
       }
     }
   ]
