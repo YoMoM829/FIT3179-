@@ -92,9 +92,10 @@
       "mark": {
         "type": "text",
         "align": "left",
-        "dx": 20,
-        "dy": -5,
-        "fontSize": 14,
+        "dx": 30,  
+        "dy": -5,  
+        "fontSize": 14, 
+        "fontWeight": "lighter",   
         "color": "red"
       },
       "encoding": {
