@@ -4,34 +4,76 @@
         <meta charset="UTF-8">
         <title>33156905 - Visualisation 2</title>
 
-        <!-- CSS -->
-        <link rel="stylesheet" href="Week 10 Homework/CSS/general.css">
-        <link rel="stylesheet" href="Week 10 HomeworkCSS/tsunami_time_bar_chart.css">
-        <link rel="stylesheet" href="Week 10 HomeworkCSS/tsunami_map.css">
-
-        <!-- Include Vega, Vega-Lite, and Vega-Embed libraries -->
+        <link rel="stylesheet" href="CSS/Ass2.css">
         <script src="https://cdn.jsdelivr.net/npm/vega@5"></script>
         <script src="https://cdn.jsdelivr.net/npm/vega-lite@5"></script>
         <script src="https://cdn.jsdelivr.net/npm/vega-embed@6"></script>
-        <script src="Week 10 Homework/VEGA/HW.js"></script>
+        <script src="JS/Ass2.js"></script>
     </head>
     <body>
         <div class="title">
-            <p class="title-text">Tsunamis around Earth</p>
+            <img class="title-image" src="DATA/download.jpeg">
+            <p class="title-text">Analysing Energy in Australia</p>
+            <img class="title-image" src="DATA/title_image.png">
         </div>
-        
         <div class="content">
-            <div class="container-1">
-                <div class="map-container">
-                    <div id="map"></div>
-                </div>
-            </div>
-            <div class="vis1-container">
-                <div class="vis1-special-container">
-                    <div id="vis1"></div> 
-                </div>
-                <div class="vis1-text"></div>
+            <div class="chart-container">
+                <div id="energy_percentage_type"></div>
             </div>
         </div>
-    </body>
+        <div class="content">
+            <div class="content-container">
+                <div class="chart-container">
+                    <div id="energy_prod"></div>
+                </div>
+                <div class="generic">
+                    Sample
+                </div>
+            </div>
+            <div class="content-container">
+                <div class="generic">
+                    Sample
+                </div>
+                <div class="chart-container">
+                    <div id="energy_cons"></div>
+                </div>
+            </div>
+        </div>
+        <div class="content">
+            <div class="content-container">
+                <div class="generic">
+                    Australia is one of the biggest exporters 
+                    of resources in the world.
+                    <br>
+                    <br>
+                    Australia exports many types of resources
+                    including Energy resources.
+                    <br>
+                    <br>
+                    It is the 16th largest exporter as quoted by
+                    the OEC in 2022. 
+                    <br>
+                    <br>
+                    Australia made around $424B and arond $16.3K per capita product in 2024.
+                </div>
+                <div class="chart-container">
+                    <div id="energy_imports"></div>
+                </div>
+            </div>  
+            <div class="content-container">
+                <div class="chart-container">
+                    <div id="energy_exports"></div>
+                </div>
+                <div class="generic">
+                    Australia is also one of the biggest importers of resources in the world.
+                    <br>
+                    <br>
+                    As shown, Australia exports energy resources, mainly Renewables, Coal, Gas 
+                    and Petrol.
+                    <br>
+                    <br>
+                    
+                </div>
+            </div>
+        </div>
 </html>
