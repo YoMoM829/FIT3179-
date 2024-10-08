@@ -13,7 +13,7 @@
           "url": "https://raw.githubusercontent.com/YoMoM829/FIT3179-/refs/heads/main/MAPS/ne_1.json",
           "format": {
             "type": "topojson", 
-            "feature": "ne_110m_graticules_5"
+            "feature": "ne_10m_admin_0_countries"
           } 
         },
         "mark": {
