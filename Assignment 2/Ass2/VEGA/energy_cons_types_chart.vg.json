@@ -1,13 +1,52 @@
 {
   "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
-  "title": { "text": "Energy Consumption by Fuel Type" },
+  "title": { 
+    "text": "Energy Consumption by Fuel Type",
+    "fontSize": 40,
+    "font": "Arial" 
+  },
+  "width": 800,
+  "height": 600,
   "data": {
     "url": "DATA/energy_cons_fuel_type.csv"
   },
+  "params": [
+    {
+      "name": "Start",
+      "value": 1973,
+      "bind": {
+        "input": "range",
+        "min": 1982,
+        "max": 2022,
+        "step": 1
+      }
+    },
+    {
+      "name": "End",
+      "value": 2022,
+      "bind": {
+        "input": "range",
+        "min": 1982,
+        "max": 2022,
+        "step": 1
+      }
+    },
+    {
+      "name": "FuelType",
+      "value": "All",
+      "bind": {
+        "input": "select",
+        "options": ["All", "Coal", "Renewables", "Gas", "Oil"]
+      }
+    }
+  ],
   "transform": [
     {
       "fold": ["Coal", "Renewables", "Gas", "Oil"],
       "as": ["FuelType", "Energy"]
+    },
+    {
+      "filter": "datum.Time >= Start && datum.Time <= End && (FuelType === 'All' || datum.FuelType === FuelType)"
     },
     {
       "calculate": "datetime(datum.Time, 0, 1)", 
@@ -21,17 +60,40 @@
     "x": {
       "field": "year",
       "type": "temporal",
-      "title": "Year"
+      "title": "Year",
+      "axis": {
+        "titleFontSize": 20,
+        "titleFont": "Arial",
+        "labelFont": "Arial",
+        "labelFontSize": 18
+      }
     },
     "y": {
       "field": "Energy",
       "type": "quantitative",
-      "title": "Energy (PJ)"
+      "title": "Energy (PJ)",
+      "axis": {
+        "titleFontSize": 20,
+        "titleFont": "Arial",
+        "labelFontSize": 18,
+        "labelFont": "Arial"
+      }
     },
     "color": {
       "field": "FuelType",
       "type": "nominal",
-      "title": "Fuel Type"
-    }
+      "title": "Fuel Type",
+      "legend": {
+        "titleFontSize": 20,
+        "labelFontSize": 18,
+        "titleFont": "Arial",
+        "labelFont": "Arial"
+      }
+    },
+    "tooltip": [
+      {"field": "year", "type": "temporal", "title": "Year"},
+      {"field": "FuelType", "type": "nominal", "title": "Fuel Type"},
+      {"field": "Energy", "type": "quantitative", "title": "PJ"}
+    ]
   }
 }

@@ -1,17 +1,41 @@
 {
     "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
-    "title": { "text": "Exports of Energy Types" },
+    "title": {
+      "text": {"expr": "'Exports of Energy Types ' + '('  + SelectedYear + ')'"},
+      "fontSize": 40
+    },
+    "width": 800,
+    "height": 600,
     "data": {
       "url": "DATA/energy_exports.csv"
     },
+    "params": [
+    {
+      "name": "SelectedYear",
+      "value": 2020, 
+      "bind": {
+        "input": "range",
+        "min": 1983,
+        "max": 2022,
+        "name": "Select Year",
+        "step": 1
+      }
+    }
+  ],
     "transform": [
+      {
+        "filter": "datum.Time == SelectedYear" 
+      },
       {
         "fold": ["Oil", "Refined Petroleum Products", "Gas", "Coal"],
         "as": ["FuelType", "Energy"]
       }
     ],
     "mark": {
-      "type": "arc"
+      "type": "arc",
+      "stroke": "black",
+      "strokeWidth": 2,
+      "tooltip": true
     },
     "encoding": {
       "theta": {
@@ -22,7 +46,17 @@
       "color": {
         "field": "FuelType",
         "type": "nominal",
-        "title": "Fuel Type"
-      }
-    }
+        "title": "Fuel Type",
+        "legend": {
+          "titleFontSize": 20,
+          "labelFontSize": 18,
+          "titleFont": "Arial",
+          "labelFont": "Arial"
+        }
+      },
+      "tooltip": [
+      {"field": "FuelType", "type": "nominal", "title": "Fuel Type"},
+      {"field": "Energy", "type": "quantitative", "title": "Energy (PJ)"}
+    ]
+  }
 }
