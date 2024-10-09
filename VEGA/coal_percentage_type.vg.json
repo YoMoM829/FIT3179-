@@ -5,7 +5,7 @@
       "fontSize": 40
     },
     "width": 600,
-    "height": 300,
+    "height": 400,
     "projection": {"type": "mercator"},
     "layer": [
       {
@@ -23,24 +23,14 @@
       },
       {
         "data": {"url": "DATA/energy_percentage_map.csv"},
-        "transform": [
-          {
-            "fold": ["Coal", "Renewables", "Gas", "Oil"],
-            "as": ["energy_type", "percentage"]
-          }
-        ],
         "mark": "circle",
         "encoding": {
           "longitude": {"field": "Longitude", "type": "quantitative"},
           "latitude": {"field": "Latitude", "type": "quantitative"},
           "color": {
-            "field": "energy_type",
+            "field": "States",
             "type": "nominal",
-            "scale": {
-              "domain": ["Coal", "Renewables", "Gas", "Oil"],
-              "range": ["#ff5733", "#28b463", "#3498db", "#f1c40f"]
-            },
-            "title": "Energy Type",
+            "title": "State",
             "legend": {
               "titleFontSize": 20,
               "labelFontSize": 18,
@@ -49,7 +39,7 @@
             }
           },
           "size": {
-            "field": "percentage",
+            "field": "Coal",
             "type": "quantitative",
             "title": "Percentage",
             "scale": {"range": [0, 1000]},
@@ -62,8 +52,7 @@
           },
           "tooltip": [
             {"field": "States", "type": "nominal", "title": "State"},
-            {"field": "energy_type", "type": "nominal", "title": "Energy Type"},
-            {"field": "percentage", "type": "quantitative", "title": "Percentage"}
+            {"field": "Coal", "type": "quantitative", "title": "Percentage"}
           ]
         }
       }
