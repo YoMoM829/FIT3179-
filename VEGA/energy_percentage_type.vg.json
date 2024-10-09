@@ -10,10 +10,10 @@
     "layer": [
       {
         "data": {
-          "url": "https://raw.githubusercontent.com/YoMoM829/FIT3179-/refs/heads/main/MAPS/ne_1.json",
+          "url": "https://raw.githubusercontent.com/YoMoM829/FIT3179-/refs/heads/main/VEGA/map.json",
           "format": {
             "type": "topojson", 
-            "feature": "ne_10m_admin_1_states_provinces"
+            "feature": "ne_10m_admin_0_countries"
           } 
         },
         "mark": {
@@ -69,4 +69,3 @@
       }
     ]
   }
-  
