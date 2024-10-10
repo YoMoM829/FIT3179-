@@ -1,0 +1,83 @@
+{
+  "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+  "title": {
+    "text": "Energy Usage by Type across Australian States",
+    "fontSize": 40
+  },
+  "width": 1250,
+  "height": 900,
+  "projection": {"type": "mercator"},
+  "params": [
+    {
+      "name": "FuelType",
+      "value": "All",
+      "bind": {
+        "input": "select",
+        "options": ["All", "Coal", "Renewables", "Gas", "Oil"],
+        "name": "Select Fuel Type"
+      }
+    }
+  ],
+  "layer": [
+    {
+      "data": {
+        "url": "https://raw.githubusercontent.com/YoMoM829/FIT3179-/refs/heads/main/VEGA/map.json",
+        "format": {
+          "type": "topojson", 
+          "feature": "ne_10m_admin_0_countries"
+        } 
+      },
+      "mark": {
+        "type": "geoshape",
+        "stroke": "black"
+      }
+    },
+    {
+      "data": {"url": "DATA/energy_percentage_map.csv"},
+      "transform": [
+        {
+          "fold": ["Coal", "Renewables", "Gas", "Oil"],
+          "as": ["energy_type", "percentage"]
+        },
+        {
+          "filter": {
+            "or": [
+              {"field": "FuelType", "equal": "All"},
+              {"field": "energy_type", "equal": {"param": "FuelType"}}
+            ]
+          }
+        }
+      ],
+      "mark": {
+        "type": "circle",
+        "stroke": "black",
+        "strokeWidth": 1,
+        "fillOpacity": 0.7
+      },
+      "encoding": {
+        "longitude": {"field": "Longitude", "type": "quantitative"},
+        "latitude": {"field": "Latitude", "type": "quantitative"},
+        "color": {
+          "field": "energy_type",
+          "type": "nominal",
+          "scale": {
+            "domain": ["Coal", "Renewables", "Gas", "Oil"],
+            "range": ["#ff5733", "#28b463", "#3498db", "#f1c40f"]
+          },
+          "title": "Energy Type"
+        },
+        "size": {
+          "field": "percentage",
+          "type": "quantitative",
+          "scale": {"range": [50, 500]},
+          "title": "Percentage"
+        },
+        "tooltip": [
+          {"field": "States", "type": "nominal", "title": "State"},
+          {"field": "energy_type", "type": "nominal", "title": "Energy Type"},
+          {"field": "percentage", "type": "quantitative", "title": "Percentage"}
+        ]
+      }
+    }
+  ]
+}

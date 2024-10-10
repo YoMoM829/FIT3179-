@@ -14,6 +14,6 @@ var spec = "VEGA/energy_exports.vg.json";
 vegaEmbed('#energy_exports', spec).then(function(result) {
 }).catch(console.error);
 
-var spec = "VEGA/coal_percentage_type.vg.json";
-vegaEmbed('#coal_map', spec).then(function(result) {
+var spec = "VEGA/energy_percentage_type.vg.json";
+vegaEmbed('#energy_map', spec).then(function(result) {
 }).catch(console.error);
