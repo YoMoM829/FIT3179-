@@ -1,12 +1,22 @@
 {
   "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
   "title": {
-    "text": "Coal Usage by Percentage across Australian States",
+    "text": "Fuel Usage by Percentage across Australian States",
     "fontSize": 40
   },
   "width": 600,
   "height": 300,
   "projection": {"type": "mercator"},
+  "params": [
+    {
+      "name": "FuelType",
+      "value": "Coal",
+      "bind": {
+        "input": "select",
+        "options": ["Coal", "Renewables", "Gas", "Oil"]
+      }
+    }
+  ],
   "data": {
     "url": "https://raw.githubusercontent.com/amishmishra27/FIT3179_A2/refs/heads/main/js/aus_boundaries.topojson",
     "format": {
@@ -14,6 +24,22 @@
       "feature": "STE_2021_AUST_GDA2020"
     }
   },
+  "transform": [
+    {
+      "lookup": "properties.STE_NAME21",
+      "from": {
+        "data": {
+          "url": "https://raw.githubusercontent.com/YoMoM829/FIT3179-/refs/heads/main/DATA/energy_percentage_map.csv"
+        },
+        "key": "States",
+        "fields": ["Coal", "Renewables", "Gas", "Oil"]
+      }
+    },
+    {
+      "calculate": "datum[FuelType]",
+      "as": "FuelUsage"
+    }
+  ],
   "layer": [
     {
       "mark": {
@@ -23,31 +49,18 @@
       }
     },
     {
-      "transform": [
-        {
-          "lookup": "properties.STE_NAME21",
-          "from": {
-            "data": {
-              "url": "https://raw.githubusercontent.com/YoMoM829/FIT3179-/refs/heads/main/DATA/energy_percentage_map.csv",
-              "format": {"type": "csv"}
-            },
-            "key": "States",
-            "fields": ["Coal"]
-          }
-        }
-      ],
       "mark": {
         "type": "geoshape",
         "stroke": "white"
       },
       "encoding": {
         "color": {
-          "field": "Coal",
+          "field": "FuelUsage",
           "type": "quantitative",
-          "title": "Coal Usage (%)",
+          "title": "Fuel Usage (%)",
           "scale": {
-            "domain": [0, 100],
-            "range": ["#f7fbff", "#2171b5"]
+            "domain": [0, 20, 40, 60, 80, 100],
+            "range": ["#fc9292", "#b00202"]
           }
         },
         "tooltip": [
@@ -57,10 +70,10 @@
             "title": "State"
           },
           {
-            "field": "Coal",
+            "field": "FuelUsage",
             "type": "quantitative",
             "format": ".2f",
-            "title": "Coal Usage (%)"
+            "title": "Fuel Usage (%)"
           }
         ]
       }
