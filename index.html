@@ -4,7 +4,15 @@
         <meta charset="UTF-8">
         <title>33156905 - Visualisation 2</title>
 
-        <link rel="stylesheet" href="CSS/Ass2.css">
+        <link rel="stylesheet" href="CSS/general.css">
+        <link rel="stylesheet" href="CSS/title.css">
+        <link rel="stylesheet" href="CSS/filter.css">
+        <link rel="stylesheet" href="CSS/chart.css">
+
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Noto+Sans:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+        
         <script src="https://cdn.jsdelivr.net/npm/vega@5"></script>
         <script src="https://cdn.jsdelivr.net/npm/vega-lite@5"></script>
         <script src="https://cdn.jsdelivr.net/npm/vega-embed@6"></script>
@@ -13,15 +21,68 @@
         <div class="title">
             <p class="title-text">Analysing Energy in Australia</p>
         </div>
-        <div class="content">
+        <div class="generic" style="background: black; color: white; height:600px; width:100%">
+            <span style="font-size: 60px;">What is Energy?</span>
+            <br>
+            <div>
+                Energy exists around us <br>
+                It exists in Plants and Humans as biochemical energy <br>
+                It exists as Solar Energy from the Sun and as Chemical Energy in Coal <br>
+                It is all around us and used to power all the large technologies of the World<br>  
+            <br>
+            </div>
+            <div>
+                Energy is used to power Australia and its citizens<br>
+                But How <span style="font-weight: bold;">much is produced</span><br>
+                And How <span style="font-weight: bold;">much is consumed?</span><br>
+                How much does Australia <span style="font-weight: bold;">profit from Energy?</span><br>
+                And how much does cost to <span style="font-weight: bold;">buy it?</span><br>
+            </div>
+        </div>
+        <div class="generic">
+            <span style="font-size: 60px; margin-top: 20px;">Let's have a look!</span>
+            <div style="display: flex; flex-direction: row; margin-top: 40px; justify-content: space-between;">
+                <div style="width: 33%;">
+                    <div style="font-size: 50px; font-size: bold; margin-bottom: 10px;">35%</div>
+                    <div>As of 2023, 35% of all Energy in Australia was produced by Oil</div>
+                </div>
+                <div style="width: 33%;">
+                    <div style="font-size: 50px; font-size: bold; margin-bottom: 10px;">2050</div>
+                    <div>The Australian Government is aiming 
+                        <br>to achieve Net Zero emissions by 2050 
+                        <br>and aims to reduce emissions by double by 2030
+                    </div>
+                </div>
+                <div style="width: 33%;">
+                    <div style="font-size: 50px; font-size: bold; margin-bottom: 10px;">355 Mt CO2</div>
+                    <div>
+                        Australia as of 2022 has around <br>355 Megatons of emissions of C02
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- <div class="content">
             <div class="chart-container">
                 <div id="energy_map"></div>
             </div>
-        </div>
-        <div class="content">
+        </div> -->
+        <div class="content" style="background-color: black; color: white;">
+            <div class="container-title"> Energy Production/Consumption</div>
+            <div class="container-description">
+                When it comes to Australia, it has a population of 26.01 million. 
+                This is actually quite a small population given the size of Australia.
+                However, Australia is a Developed country and quite technologically 
+                advanced comapred to most other countries. In fact, Australia is the
+                <span style="font-size: 50px;">20th</span>
+                largest consume of Energy on the Planet.
+                Additionally, Australia is the
+                <span style="font-size: 50px;">15th</span>
+                in terms of per capita energy
+                use which refers to the amount of energy used by each Australian. 
+            </div>
             <div class="content-container">
                 <div class="chart-container">
-                    <div id="energy_prod"></div>
+                    <div id="energy_prod" style="color: black; background-color: white;"></div>
                 </div>
                 <div class="generic">
                     Sample
@@ -32,11 +93,24 @@
                     Sample
                 </div>
                 <div class="chart-container">
-                    <div id="energy_cons"></div>
+                    <div id="energy_cons" style="color: black; background-color: white;"></div>
                 </div>
             </div>
         </div>
         <div class="content">
+            <div class="container-title"> Imports/Exports of Energy</div>
+            <div class="container-description">
+                When it comes to Australia, it has a population of 26.01 million. 
+                This is actually quite a small population given the size of Australia.
+                However, Australia is a Developed country and quite technologically 
+                advanced comapred to most other countries. In fact, Australia is the
+                <span style="font-size: 50px;">20th</span>
+                largest consume of Energy on the Planet.
+                Additionally, Australia is the
+                <span style="font-size: 50px;">15th</span>
+                in terms of per capita energy
+                use which refers to the amount of energy used by each Australian. 
+            </div>
             <div class="content-container">
                 <div class="generic">
                     Australia is one of the biggest exporters 
