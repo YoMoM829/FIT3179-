@@ -41,6 +41,20 @@
         </div>
         <div>
             <span style="font-size: 60px;">Energy Over the States</span>
+
+            <label>Select Fuel Type:</label>
+            <select id="fuelType">
+              <option value="Coal">Coal</option>
+              <option value="Gas">Gas</option>
+              <option value="Gas">Renewables</option>
+              <option value="Oil">Oil</option>
+            </select>
+
+            <div class="content">
+                <div class="chart-container">
+                    <div id="energy_map"></div>
+                </div>
+            </div>
         </div>
         <div class="generic">
             <span style="font-size: 60px; margin-top: 20px;">Let's have a look!</span>
@@ -64,11 +78,6 @@
                 </div>
             </div>
         </div>
-        <!-- <div class="content">
-            <div class="chart-container">
-                <div id="energy_map"></div>
-            </div>
-        </div> -->
         <div class="content" style="background-color: black; color: white;">
             <div class="container-title"> Energy Production/Consumption</div>
             <div class="container-description">
@@ -83,7 +92,7 @@
                 in terms of per capita energy
                 use which refers to the amount of energy used by each Australian. 
             </div>
-            <div class="content-container">
+            <div class="content-container" style="width: 90%">
                 <div class="chart-container">
                     <div id="energy_prod" style="color: black; background-color: white;"></div>
                 </div>
@@ -103,7 +112,7 @@
                     energy. 
                 </div>
             </div>
-            <div class="content-container">
+            <div class="content-container" style="width: 90%">
                 <div class="generic">
                     A similar trend is seen in the line chart above where Coal seems 
                     to be resource where the energy produced from it is consumed.
