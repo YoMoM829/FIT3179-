@@ -4,8 +4,8 @@
       "text": {"expr": "'Exports of Energy Types ' + '('  + SelectedYear + ')'"},
       "fontSize": 40
     },
-    "width": 800,
-    "height": 300,
+    "width": 300,
+    "height": 400,
     "data": {
       "url": "DATA/energy_exports.csv"
     },
