@@ -14,7 +14,7 @@ var spec = "VEGA/energy_exports.vg.json";
 vegaEmbed('#energy_exports', spec).then(function(result) {
 }).catch(console.error);
 
-var spec = "VEGA/energy_percentage_type.vg.json";
+var spec = "VEGA/map.vg.json";
 vegaEmbed('#energy_map', spec).then(function(result) {
 }).catch(console.error);
 
@@ -25,34 +25,24 @@ fuelSelect.addEventListener("change", function() {
     let path = ""
 
     if (fuelType === "Coal") {
-        path = "energy_cons_coal_time_state.csv";
+        path = "https://raw.githubusercontent.com/YoMoM829/FIT3179-/refs/heads/main/DATA/energy_cons_coal_time_state.csv";
     } else if (fuelType === "Gas") {
-        path = "energy_cons_gas_time_state.csv";
+        path = "https://raw.githubusercontent.com/YoMoM829/FIT3179-/refs/heads/main/DATA/energy_cons_gas_time_state.csv";
     } else if (fuelType === "Renewables") {
-        path = "energy_cons_renewables_time_state.csv"
+        path = "https://raw.githubusercontent.com/YoMoM829/FIT3179-/refs/heads/main/DATA/energy_cons_renewables_time_state.csv"
     } else if (fuelType === "Oil") {
-        path = "energy_cons_oil_time_state.csv"
+        path = "https://raw.githubusercontent.com/YoMoM829/FIT3179-/refs/heads/main/DATA/energy_cons_oil_time_state.csv"
     }
 
     var spec = {
         "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
         "title": {
-          "text": "Fuel Usage by Percentage across Australian States",
+          "text": "Energy Generation by State (2008-2022)",
           "fontSize": 40
         },
         "width": 600,
         "height": 300,
         "projection": {"type": "mercator"},
-        "params": [
-          {
-            "name": "FuelType",
-            "value": "Coal",
-            "bind": {
-              "input": "select",
-              "options": ["Coal", "Renewables", "Gas", "Oil"]
-            }
-          }
-        ],
         "data": {
           "url": "https://raw.githubusercontent.com/amishmishra27/FIT3179_A2/refs/heads/main/js/aus_boundaries.topojson",
           "format": {
@@ -65,15 +55,15 @@ fuelSelect.addEventListener("change", function() {
             "lookup": "properties.STE_NAME21",
             "from": {
               "data": {
-                "url": "https://raw.githubusercontent.com/YoMoM829/FIT3179-/refs/heads/main/DATA/energy_percentage_map.csv"
+                "url": path
               },
               "key": "States",
-              "fields": ["Coal", "Renewables", "Gas", "Oil"]
+              "fields": ["Time"]
             }
           },
           {
-            "calculate": "datum[FuelType]",
-            "as": "FuelUsage"
+            "calculate": "datum[Time]", 
+            "as": "EnergyGeneration"
           }
         ],
         "layer": [
@@ -91,11 +81,11 @@ fuelSelect.addEventListener("change", function() {
             },
             "encoding": {
               "color": {
-                "field": "FuelUsage",
+                "field": "EnergyGeneration",
                 "type": "quantitative",
-                "title": "Fuel Usage (%)",
+                "title": "Energy Generation (PJ)",
                 "scale": {
-                  "domain": [0, 20, 40, 60, 80, 100],
+                  "domain": [0, 1000, 2000, 3000, 4000, 5000],
                   "range": ["#fc9292", "#b00202"]
                 }
               },
@@ -106,16 +96,17 @@ fuelSelect.addEventListener("change", function() {
                   "title": "State"
                 },
                 {
-                  "field": "FuelUsage",
+                  "field": "EnergyGeneration",
                   "type": "quantitative",
                   "format": ".2f",
-                  "title": "Fuel Usage (%)"
+                  "title": "Energy Generation (PJ)"
                 }
               ]
             }
           }
         ]
-    }
+      }
+      
     vegaEmbed('#energy_map', spec).then(function(result) {
     }).catch(console.error);
 }); 
