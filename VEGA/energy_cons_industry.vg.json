@@ -1,0 +1,84 @@
+{
+  "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+  "title": {
+    "text": "Energy Consumption by Industry Over Time",
+    "fontSize": 40
+  },
+  "width": 700,
+  "height": 500,
+  "data": {
+    "url": "DATA/energyindustry.csv"
+  },
+  "params": [
+    {
+      "name": "yearSelector",
+      "value": 1982,
+      "bind": {
+        "input": "range",
+        "min": 1982,
+        "max": 2022,
+        "step": 1
+      }
+    }
+  ],
+  "transform": [
+    {
+      "fold": [
+        "Transport", 
+        "Electricity Supply", 
+        "Manufacturing", 
+        "Mining", 
+        "Residential", 
+        "Commercial", 
+        "Other"
+      ],
+      "as": ["Industry", "Energy"]
+    },
+    {
+      "calculate": "datum.Time", 
+      "as": "year"
+    },
+    {
+      "filter": "datum.year == yearSelector"
+    }
+  ],
+  "mark": "bar",
+  "encoding": {
+    "x": {
+      "field": "Industry",
+      "type": "nominal",
+      "axis": {
+        "labelAngle": -45,
+        "titleFontSize": 20,
+        "titleFont": "Arial",
+        "labelFont": "Arial",
+        "labelFontSize": 18
+      }
+    },
+    "y": {
+      "field": "Energy",
+      "type": "quantitative",
+      "title": "Energy Consumption (PJ)",
+      "axis": {
+        "titleFontSize": 20,
+        "titleFont": "Arial",
+        "labelFont": "Arial",
+        "labelFontSize": 18
+      }
+    },
+    "color": {
+      "field": "Industry",
+      "type": "nominal",
+      "legend": {
+          "titleFontSize": 20,
+          "labelFontSize": 18,
+          "titleFont": "Arial",
+          "labelFont": "Arial"
+        }
+    },
+    "tooltip": [
+      {"field": "Industry", "type": "nominal"},
+      {"field": "Energy", "type": "quantitative", "format": ".2f"}
+    ]
+  }
+}

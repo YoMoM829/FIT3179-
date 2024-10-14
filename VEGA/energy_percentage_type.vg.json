@@ -4,8 +4,8 @@
     "text": "Fuel Usage by Percentage across Australian States",
     "fontSize": 40
   },
-  "width": 600,
-  "height": 300,
+  "width": 1000,
+  "height": 800,
   "projection": {"type": "mercator"},
   "params": [
     {

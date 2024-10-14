@@ -1,0 +1,288 @@
+Time,Industry,Energy
+1982.0,Transport,837.0
+1983.0,Transport,864.1
+1984.0,Transport,892.1
+1985.0,Transport,906.3
+1986.0,Transport,922.1
+1987.0,Transport,966.0
+1988.0,Transport,1004.9
+1989.0,Transport,1012.4
+1990.0,Transport,1003.0
+1991.0,Transport,1024.3
+1992.0,Transport,1049.6
+1993.0,Transport,1081.0
+1994.0,Transport,1139.3
+1995.0,Transport,1181.5
+1996.0,Transport,1203.0
+1997.0,Transport,1210.2
+1998.0,Transport,1228.5
+1999.0,Transport,1266.6
+2000.0,Transport,1249.1
+2001.0,Transport,1261.1
+2002.0,Transport,1265.9
+2003.0,Transport,1327.8
+2004.0,Transport,1358.1
+2005.0,Transport,1388.2
+2006.0,Transport,1425.7
+2007.0,Transport,1458.0
+2008.0,Transport,1460.1
+2009.0,Transport,1490.8
+2010.0,Transport,1524.4
+2011.0,Transport,1547.6
+2012.0,Transport,1574.0
+2013.0,Transport,1592.2
+2014.0,Transport,1623.3
+2015.0,Transport,1654.9
+2016.0,Transport,1690.1
+2017.0,Transport,1734.1
+2018.0,Transport,1746.6
+2019.0,Transport,1589.9
+2020.0,Transport,1418.3
+2021.0,Transport,1447.8
+2022.0,Transport,1622.1
+1982.0,Electricity Supply,829.7
+1983.0,Electricity Supply,846.6
+1984.0,Electricity Supply,900.9
+1985.0,Electricity Supply,896.2
+1986.0,Electricity Supply,939.5
+1987.0,Electricity Supply,962.5
+1988.0,Electricity Supply,1047.6
+1989.0,Electricity Supply,1066.0
+1990.0,Electricity Supply,1065.0
+1991.0,Electricity Supply,1092.9
+1992.0,Electricity Supply,1096.4
+1993.0,Electricity Supply,1109.6
+1994.0,Electricity Supply,1162.6
+1995.0,Electricity Supply,1211.8
+1996.0,Electricity Supply,1244.1
+1997.0,Electricity Supply,1347.3
+1998.0,Electricity Supply,1415.6
+1999.0,Electricity Supply,1427.4
+2000.0,Electricity Supply,1507.9
+2001.0,Electricity Supply,1542.9
+2002.0,Electricity Supply,1566.7
+2003.0,Electricity Supply,1664.8
+2004.0,Electricity Supply,1706.4
+2005.0,Electricity Supply,1730.7
+2006.0,Electricity Supply,1807.8
+2007.0,Electricity Supply,1823.9
+2008.0,Electricity Supply,1913.9
+2009.0,Electricity Supply,1755.2
+2010.0,Electricity Supply,1682.6
+2011.0,Electricity Supply,1726.3
+2012.0,Electricity Supply,1600.1
+2013.0,Electricity Supply,1564.8
+2014.0,Electricity Supply,1650.4
+2015.0,Electricity Supply,1697.7
+2016.0,Electricity Supply,1662.6
+2017.0,Electricity Supply,1601.7
+2018.0,Electricity Supply,1566.4
+2019.0,Electricity Supply,1523.2
+2020.0,Electricity Supply,1455.0
+2021.0,Electricity Supply,1405.9
+2022.0,Electricity Supply,1378.3
+1982.0,Manufacturing,852.7
+1983.0,Manufacturing,887.8
+1984.0,Manufacturing,934.3
+1985.0,Manufacturing,939.6
+1986.0,Manufacturing,966.0
+1987.0,Manufacturing,988.3
+1988.0,Manufacturing,1041.0
+1989.0,Manufacturing,1067.4
+1990.0,Manufacturing,1073.9
+1991.0,Manufacturing,1033.9
+1992.0,Manufacturing,1066.6
+1993.0,Manufacturing,1109.0
+1994.0,Manufacturing,1132.4
+1995.0,Manufacturing,1135.4
+1996.0,Manufacturing,1155.0
+1997.0,Manufacturing,1179.3
+1998.0,Manufacturing,1192.9
+1999.0,Manufacturing,1191.9
+2000.0,Manufacturing,1188.3
+2001.0,Manufacturing,1207.4
+2002.0,Manufacturing,1175.0
+2003.0,Manufacturing,1136.6
+2004.0,Manufacturing,1163.7
+2005.0,Manufacturing,1231.4
+2006.0,Manufacturing,1258.7
+2007.0,Manufacturing,1207.5
+2008.0,Manufacturing,1171.4
+2009.0,Manufacturing,1259.8
+2010.0,Manufacturing,1330.6
+2011.0,Manufacturing,1214.9
+2012.0,Manufacturing,1278.9
+2013.0,Manufacturing,1247.1
+2014.0,Manufacturing,1126.1
+2015.0,Manufacturing,1122.9
+2016.0,Manufacturing,1092.6
+2017.0,Manufacturing,1101.8
+2018.0,Manufacturing,1081.0
+2019.0,Manufacturing,1055.0
+2020.0,Manufacturing,1042.9
+2021.0,Manufacturing,1028.9
+2022.0,Manufacturing,996.3
+1982.0,Mining,75.1
+1983.0,Mining,83.2
+1984.0,Mining,96.9
+1985.0,Mining,97.9
+1986.0,Mining,105.0
+1987.0,Mining,116.7
+1988.0,Mining,129.3
+1989.0,Mining,159.9
+1990.0,Mining,164.6
+1991.0,Mining,176.2
+1992.0,Mining,189.3
+1993.0,Mining,194.6
+1994.0,Mining,213.1
+1995.0,Mining,237.6
+1996.0,Mining,247.9
+1997.0,Mining,261.5
+1998.0,Mining,260.7
+1999.0,Mining,272.5
+2000.0,Mining,253.9
+2001.0,Mining,268.8
+2002.0,Mining,254.3
+2003.0,Mining,264.6
+2004.0,Mining,285.9
+2005.0,Mining,302.8
+2006.0,Mining,321.9
+2007.0,Mining,329.7
+2008.0,Mining,369.4
+2009.0,Mining,372.3
+2010.0,Mining,407.5
+2011.0,Mining,448.1
+2012.0,Mining,500.9
+2013.0,Mining,529.5
+2014.0,Mining,521.2
+2015.0,Mining,575.6
+2016.0,Mining,666.3
+2017.0,Mining,729.7
+2018.0,Mining,812.4
+2019.0,Mining,853.6
+2020.0,Mining,850.4
+2021.0,Mining,865.9
+2022.0,Mining,883.1
+1982.0,Residential,273.2
+1983.0,Residential,276.0
+1984.0,Residential,282.1
+1985.0,Residential,288.4
+1986.0,Residential,298.1
+1987.0,Residential,296.2
+1988.0,Residential,301.5
+1989.0,Residential,322.3
+1990.0,Residential,327.8
+1991.0,Residential,334.6
+1992.0,Residential,347.1
+1993.0,Residential,344.4
+1994.0,Residential,358.6
+1995.0,Residential,368.4
+1996.0,Residential,376.3
+1997.0,Residential,383.5
+1998.0,Residential,384.6
+1999.0,Residential,391.9
+2000.0,Residential,398.0
+2001.0,Residential,389.0
+2002.0,Residential,411.6
+2003.0,Residential,415.0
+2004.0,Residential,410.9
+2005.0,Residential,418.0
+2006.0,Residential,426.7
+2007.0,Residential,431.2
+2008.0,Residential,437.4
+2009.0,Residential,444.3
+2010.0,Residential,454.1
+2011.0,Residential,453.4
+2012.0,Residential,455.1
+2013.0,Residential,435.1
+2014.0,Residential,443.8
+2015.0,Residential,444.3
+2016.0,Residential,453.6
+2017.0,Residential,449.0
+2018.0,Residential,457.0
+2019.0,Residential,474.5
+2020.0,Residential,484.1
+2021.0,Residential,497.3
+2022.0,Residential,484.2
+1982.0,Commercial,104.5
+1983.0,Commercial,105.6
+1984.0,Commercial,109.9
+1985.0,Commercial,116.1
+1986.0,Commercial,122.9
+1987.0,Commercial,129.4
+1988.0,Commercial,136.7
+1989.0,Commercial,145.5
+1990.0,Commercial,151.1
+1991.0,Commercial,154.2
+1992.0,Commercial,158.8
+1993.0,Commercial,162.3
+1994.0,Commercial,172.9
+1995.0,Commercial,183.6
+1996.0,Commercial,189.6
+1997.0,Commercial,198.4
+1998.0,Commercial,204.7
+1999.0,Commercial,211.3
+2000.0,Commercial,214.5
+2001.0,Commercial,221.9
+2002.0,Commercial,250.7
+2003.0,Commercial,255.9
+2004.0,Commercial,256.4
+2005.0,Commercial,259.4
+2006.0,Commercial,272.6
+2007.0,Commercial,274.5
+2008.0,Commercial,278.7
+2009.0,Commercial,284.4
+2010.0,Commercial,291.3
+2011.0,Commercial,286.7
+2012.0,Commercial,296.1
+2013.0,Commercial,291.5
+2014.0,Commercial,319.8
+2015.0,Commercial,314.1
+2016.0,Commercial,314.6
+2017.0,Commercial,319.2
+2018.0,Commercial,310.7
+2019.0,Commercial,298.0
+2020.0,Commercial,288.1
+2021.0,Commercial,296.1
+2022.0,Commercial,308.1
+1982.0,Other,150.5
+1983.0,Other,157.8
+1984.0,Other,154.6
+1985.0,Other,158.0
+1986.0,Other,160.8
+1987.0,Other,163.9
+1988.0,Other,171.8
+1989.0,Other,172.3
+1990.0,Other,164.5
+1991.0,Other,166.6
+1992.0,Other,174.0
+1993.0,Other,181.0
+1994.0,Other,186.5
+1995.0,Other,187.2
+1996.0,Other,195.2
+1997.0,Other,197.4
+1998.0,Other,197.7
+1999.0,Other,209.3
+2000.0,Other,200.1
+2001.0,Other,206.1
+2002.0,Other,210.4
+2003.0,Other,216.1
+2004.0,Other,213.5
+2005.0,Other,211.3
+2006.0,Other,205.2
+2007.0,Other,208.5
+2008.0,Other,213.2
+2009.0,Other,216.9
+2010.0,Other,212.4
+2011.0,Other,211.4
+2012.0,Other,211.6
+2013.0,Other,210.9
+2014.0,Other,213.9
+2015.0,Other,225.4
+2016.0,Other,224.8
+2017.0,Other,232.6
+2018.0,Other,214.2
+2019.0,Other,206.9
+2020.0,Other,230.5
+2021.0,Other,223.2
+2022.0,Other,210.2

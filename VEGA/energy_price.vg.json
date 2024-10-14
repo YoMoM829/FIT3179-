@@ -1,0 +1,65 @@
+{
+  "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+  "title": {
+    "text": "RRP Distribution by State",
+    "fontSize": 40,
+    "anchor": "middle"
+  },
+  "width": 700,
+  "height": 500,
+  "data": {
+    "url": "DATA/cleaned_energy_price.csv"
+  },
+  "mark": {
+    "type": "boxplot",
+    "extent": "min-max"
+  },
+  "encoding": {
+    "x": {
+      "field": "States",
+      "type": "nominal",
+      "title": "State",
+      "axis": {
+        "labelAngle": 0,
+        "titleFontSize": 20,
+        "titleFont": "Arial",
+        "labelFont": "Arial",
+        "labelFontSize": 18
+      }
+    },
+    "y": {
+      "field": "RRP",
+      "type": "quantitative",
+      "title": "RRP (Price)",
+      "scale": {"zero": false},
+      "axis": {
+        "titleFontSize": 20,
+        "titleFont": "Arial",
+        "labelFont": "Arial",
+        "labelFontSize": 18
+      }
+    },
+    "color": {
+      "field": "States",
+      "type": "nominal",
+      "legend": {
+          "titleFontSize": 20,
+          "labelFontSize": 18,
+          "titleFont": "Arial",
+          "labelFont": "Arial"
+        },
+      "scale": {
+        "scheme": "category10"
+      }
+    },
+    "tooltip": [
+      {"field": "States", "type": "nominal", "title": "State"},
+      {"field": "RRP", "type": "quantitative", "title": "RRP", "format": ".2f"}
+    ]
+  },
+  "config": {
+    "axis": {
+      "labelFontSize": 12
+    }
+  }
+}
