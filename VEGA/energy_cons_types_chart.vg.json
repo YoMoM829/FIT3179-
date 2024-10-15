@@ -8,7 +8,7 @@
   "width": 800,
   "height": 300,
   "data": {
-    "url": "DATA/energy_cons_fuel_type.csv"
+    "url": "https://raw.githubusercontent.com/YoMoM829/FIT3179-/refs/heads/main/DATA/energy_cons_fuel_type.csv"
   },
   "params": [
     {

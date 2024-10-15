@@ -1,14 +1,14 @@
 {
   "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
   "title": {
-    "text": "RRP Distribution by State",
+    "text": "Price Distribution by State",
     "fontSize": 40,
     "anchor": "middle"
   },
-  "width": 700,
-  "height": 500,
+  "width": 900,
+  "height": 600,
   "data": {
-    "url": "DATA/cleaned_energy_price.csv"
+    "url": "https://raw.githubusercontent.com/YoMoM829/FIT3179-/refs/heads/main/DATA/cleaned_energy_price.csv"
   },
   "mark": {
     "type": "boxplot",
@@ -51,11 +51,7 @@
       "scale": {
         "scheme": "category10"
       }
-    },
-    "tooltip": [
-      {"field": "States", "type": "nominal", "title": "State"},
-      {"field": "RRP", "type": "quantitative", "title": "RRP", "format": ".2f"}
-    ]
+    }
   },
   "config": {
     "axis": {
